@@ -16,3 +16,22 @@ This results in the intended behavior of getting in the console the result [1, 2
 
 d. This code fixes the behavior of the code we saw in the point b. Instead of using let what it does is that it sets up an Immediately Invoked Function Expression (IIFE) so that the value of i is capture at the moment of the loop iteration. This pushes to result the correct or intended value.
 When you do console log you will get the intended result of [1, 2, 3]
+
+Q2: Async programming
+
+a. With that code as a base and then running 
+
+resolveAfter2Seconds();
+resolveAfter1Second();
+console.log(`done!`);
+
+What happens is that the first function starts with a console log that sends "starting slow promise" and then starts a promise that will resolve in 2 seconds.
+Then the second function is executed which sends to the console "starting fast promise" and then starts a new promise that will resolve in 1 second.
+After that the console log command is executed Immediately without waiting for the promises so the console gets "done!". After that the fast promise resolves and then the slow promise resolves.
+So for the output you get:
+
+starting slow promise
+starting fast promise
+done!
+fast promise is done
+slow promise is done
