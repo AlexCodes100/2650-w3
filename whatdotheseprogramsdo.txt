@@ -35,3 +35,13 @@ starting fast promise
 done!
 fast promise is done
 slow promise is done
+
+b. This one changes the execution order of fast and slow promises which changes the beginning of the output but not the end as the resolve time for the promises remains the same.
+The new output would be:
+
+starting fast promise
+starting slow promise
+done!
+fast promise is done
+slow promise is done
+
