@@ -1,0 +1,18 @@
+Q1: Scopes / Closures
+
+a. This program declares and sets a value 1 for the variable x. After that it defines a function that changes the value of x to 2 and also returns a new function.
+This new function in turn will show in the console the value of x when called.
+
+After declaring the variable x and the function foo, it calls both foo and also the returning function and ends with a console log of x again.
+What this will do is return 2 two times in the console, in different lines.
+
+b. This program declares at the function scope a variable item, an array called result and also a function that declares i also at the function scope. 
+The loop iterates tree times and pushes a function into the result array, but since i is declared at the function scope with var, i is capture with the final value of the loop for all cases.
+This is made evident when you map over the values inside result. Since it will have a function with () => items[i] where i = 3 so it will return undefined since the max index is two in the items array.
+The console returns [undefined, undefined, undefined]
+
+c. Changing var i to let i changes the behavior completely as now i is defined in a block level. What this means is that each i is independent every iteration of the loop, so the results array gets pushed a function with () => items[0] and so on for 1 and 2.
+This results in the intended behavior of getting in the console the result [1, 2, 3]
+
+d. This code fixes the behavior of the code we saw in the point b. Instead of using let what it does is that it sets up an Immediately Invoked Function Expression (IIFE) so that the value of i is capture at the moment of the loop iteration. This pushes to result the correct or intended value.
+When you do console log you will get the intended result of [1, 2, 3]
