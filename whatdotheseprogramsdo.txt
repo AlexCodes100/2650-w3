@@ -53,3 +53,16 @@ starting fast promise
 done!
 fast promise is done
 
+Q3: Error handling with async/await
+
+a. So for this one it was interesting because I kept getting errors until I wrapped the instructions since starting in an async function and then called the function in the end.
+By doing this the program starts as intended. What it does is that it creates a promise that will be ultimately rejected, this mean changing its state from pending to rejected or failed. This rejection gets handled with a try catch block that sends a console message once the error is caught.
+The output of doing this process becomes the following:
+== starting ==
+starting slow promise
+starting fast promise
+it broke! fast
+it broke! slow
+== done ==
+
+b.
