@@ -45,3 +45,11 @@ done!
 fast promise is done
 slow promise is done
 
+c. With adding the await command the execution of the program will now wait until the resolverAfter2Seconds() function resolves before continuing. Typically you would use await inside an async function.
+With the added wait time the output now becomes:
+starting slow promise
+slow promise is done
+starting fast promise
+done!
+fast promise is done
+
