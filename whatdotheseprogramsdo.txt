@@ -76,4 +76,4 @@ it broke! fast
 
 You will also get a message about the uncaught error of the slow promise.
 
-c.
+c. For this one I used Promised.all, this allowed me to have both promises executed at the same time and both would be handled by the same catch block after being settled.
