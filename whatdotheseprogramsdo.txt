@@ -65,4 +65,14 @@ it broke! fast
 it broke! slow
 == done ==
 
-b.
+b. This case is very similar to the one before. I also had to wrap it inside an async function. The difference in this code is that both function calls are inside the same try catch block. Since the code waits for fast promise to finish it throws the error and the catch block gets executed. Once this happens the code continues with what's written after the catch block so the slow promise never gets called.
+The output is as follows:
+== starting ==
+starting slow promise
+starting fast promise
+it broke! fast
+== done ==
+
+You will also get a message about the uncaught error of the slow promise.
+
+c.
